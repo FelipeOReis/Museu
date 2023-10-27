@@ -1,0 +1,247 @@
+#include <stdio.h>
+#include <conio.h>
+#include <stdlib.h>// necessário p/ as funções rand() e srand()
+#include <time.h>//necessário p/ função time()
+#include <locale.h>
+#include <string.h>
+// Definindo a struct para seleção de venda de bilhetes
+struct SelecaoBilhetes {
+    float  tipo1, tipo2, tipo3, tipo4;
+	
+	
+    
+};
+	// Estrutura para armazenar informações sobre os bilhetes
+struct Ticket {
+    
+    
+ 
+    	
+};
+
+int main() {
+	setlocale(LC_ALL, "Portuguese");
+    int escolha;
+    char nome [30] ;
+    char cpf [11];
+	int vbilhete;
+    char vcpf [11];
+    int n = rand();
+    int rest;
+    int ingresso;
+    
+    do {
+        // Exibe o menu
+        printf("\nMenu:\n");
+        printf("1. COMPRA DE INGRESSO\n");
+        printf("2. VALIDAR INGRESSO \n");
+        printf("3. IMPRIMIR INGRESSO NOVAMENTE \n");
+        printf("4. Sair\n");
+
+        // Solicita a escolha do usuário
+        printf("Escolha uma opcao: ");
+        scanf("%d", &escolha);
+		system ("cls");
+
+
+        // Processa a escolha do usuário
+        switch (escolha) {
+            case 1:
+                printf("Você escolheu a Opcao 1.\n");
+                // Criando uma instância da struct
+                    struct SelecaoBilhetes selecao;
+                    struct Ticket selecao1;
+    
+                    srand (time(NULL));
+     				//int n = rand()%10;
+					int n = rand();
+	
+	
+	                printf ("Tabela de valores \n\nR$ 98,90 Valor unitario para cada exposição. \nAo adicionar uma exposição ou mais o valor unitário adicional séra de R$ 50,00;");
+                    // Obtendo as seleções do usuário (isso pode ser feito de várias maneiras, por exemplo, usando scanf)
+                    printf(" Tabela de preços R$ 98,90 in\n\n\nQuantidade de bilhetes para o tema 100 anos da semana de arte moderna: ");
+                    scanf("%f", &selecao.tipo1);
+
+                    printf("Quantidade de bilhetes para o tema 150 anos de Santos Dumont : ");
+                    scanf("%f", &selecao.tipo2);
+
+                    printf("Quantidade de bilhetes para o tema Jogos Olimpicos de Paris 2024: ");
+                    scanf("%f", &selecao.tipo3);
+
+                    printf("Quantidade de bilhetes para o tema Tema a ser definido: ");
+                    scanf("%f", &selecao.tipo4);
+	                system ("cls");
+				
+				
+				    //condição caso não seja selecionado nenhum tema
+	                if (selecao.tipo1 == 0 && selecao.tipo2 == 0 && selecao.tipo3 == 0 && selecao.tipo4 == 0)
+	                {
+	                	printf ("\n\n\n       ****  ERRO NA COMPRA  ****");
+	                //	exit(0);
+		
+	                    };
+	
+	                float bilhete = (selecao.tipo1 + selecao.tipo2 + selecao.tipo3 + selecao.tipo4 - 1);
+	                float valorU = 98.90;// valor da primeira unidade
+	                float valorN = 50.00; // valor para as demais unidades
+	                float valor = valorN * bilhete + valorU;
+	                
+
+	
+	
+	
+	                
+					
+	                if (selecao.tipo1 >= 1 || selecao.tipo2 >=1 || selecao.tipo3 >=1 || selecao.tipo4 >=1)
+	                
+	                printf ("Selecione uma das opções para ingresso\n\n\n");
+					printf ("De acordo com A Lei Estadual 7.844 de 1992 garante que os estudantes devidamente matriculados em instituições\nde ensino possam pagar meia-entrada em ingressos de cinema, teatro, eventos esportivos e outras atrações.\nNo entanto, é exigida a carteira de estudante no momento da aquisição dos ingressos\n\n\n");
+					
+					printf ("\n\nEstudantes: alunos da educação básica e educação superior, conforme previsto no Título V da Lei no 9.394, de 20.12.1996 .\nIdosos: com idade superior a 60 (sessenta) anos .\nPessoas com necessidades especiais — e, em alguns casos, seus acompanhantes . Jovens de baixa renda de 15 a 29 anos.");
+					
+					printf ("\n\n\n\nDigite 1 para ingresso comum .   \nDigite 2 para ingresso meia entrada. \nDigite 3 para ingresso isento.\n");
+					printf ("Opção: ");
+					scanf  ("%d", &ingresso);
+					switch (ingresso){
+					
+										
+					case 1: {
+					system ("cls");
+					printf ("Ingresso comum valor da compra : %.2f", valor);
+		            printf ("\nCompra realizada com sucesso.");
+                    printf ("\nNumero do ingresso : %d\n\n\n\n", n);
+	                system ("pause");
+	                system ("cls"); 	
+	                printf ("\nPor favor insira seu nome:");
+	                gets(nome);
+					scanf("%30[^\n]", nome);
+					printf ("Por favor insira seu CPF:");
+	                scanf ("%s", cpf);	                
+					
+					system ("pause");
+	            	system ("cls");
+				    printf ("    ***INGRESSO*** \n\n\n\n");
+				    printf ("    ***COMPRA REALIZADA COM SUCESSO***/n");
+					printf ("Valor total da compra : %.2f", valor);
+					printf ("\nNome: %s", nome);
+					printf ("\nCPF: %s", cpf);
+					printf ("\ntema 100 anos da semana de arte moderna: %.f \n Jogos Olimpicos de Paris 2024: %.f \n150 anos de Santos Dumont: %.f \nTema a definir: %.f", selecao.tipo1, selecao.tipo2, selecao.tipo3, selecao.tipo4);
+					printf ("\nNumero do ingresso : %d\n\n\n\n", n);
+					break;
+				}
+					case 2: {
+					system ("cls");
+					printf ("Ingresso meia entrada valor total da compra : %.2f", valor/2);
+		            printf ("\nCompra realizada com sucesso.");
+                    printf ("\nNumero do ingresso : %d\n\n\n\n", n);
+	                system ("pause");
+	                system ("cls"); 	
+	                printf ("\nPor favor insira seu nome:");
+	                gets(nome);
+					scanf("%30[^\n]", nome);
+					printf ("Por favor insira seu CPF:");
+	                scanf ("%s", cpf);	                
+					
+					system ("pause");
+	            	system ("cls");
+				    printf ("    ***INGRESSO*** \n\n\n\n");
+				    printf ("    ***COMPRA REALIZADA COM SUCESSO***/n");
+					printf ("Valor total da compra : %.2f", valor/2);
+					printf ("\nNome: %s", nome);
+					printf ("\nCPF: %s", cpf);
+					printf ("\ntema 100 anos da semana de arte moderna: %.f \n Jogos Olimpicos de Paris 2024: %.f \n150 anos de Santos Dumont: %.f \nTema a definir: %.f", selecao.tipo1, selecao.tipo2, selecao.tipo3, selecao.tipo4);
+					printf ("\nNumero do ingresso : %d\n\n\n\n", n);
+					break;
+				}
+					case 3: {
+					system ("cls");
+					printf ("Ingresso isento valor total da compra : %.2f", valor=0);
+		            printf ("\nCompra realizada com sucesso.");
+                    printf ("\nNumero do ingresso : %d\n\n\n\n", n);
+	                system ("pause");
+	                system ("cls"); 	
+	                printf ("\nPor favor insira seu nome:");
+	                gets(nome);
+					scanf("%30[^\n]", nome);
+					printf ("Por favor insira seu CPF:");
+	                scanf ("%s", cpf);	                
+					
+					system ("pause");
+	            	system ("cls");
+				    printf ("    ***INGRESSO*** \n\n\n\n");
+				    printf ("    ***COMPRA REALIZADA COM SUCESSO***/n");
+					printf ("Valor total da compra : %.2f", valor=0);
+					printf ("\nNome: %s", nome);
+					printf ("\nCPF: %s", cpf);
+					printf ("\ntema 100 anos da semana de arte moderna: %.f \n Jogos Olimpicos de Paris 2024: %.f \n150 anos de Santos Dumont: %.f \nTema a definir: %.f", selecao.tipo1, selecao.tipo2, selecao.tipo3, selecao.tipo4);
+					printf ("\nNumero do ingresso : %d\n\n\n\n", n);
+					
+					//system ("pause"); 	
+					//system ("cls");
+	                break;
+	            }}
+               break;
+               
+               
+            case 2:
+            		//variavel para armazenar numero do bilehete e CPF para verificação.
+            		
+                	printf ("Ola, tudo bem?");
+					printf ("\nDigite o numero de ingresso para validacao: ");
+					scanf  ("%d", &vbilhete);
+					printf ("\nDigite seu CPF para validacao: ");
+					scanf ("%s", vcpf);
+					rest = strcmp (vcpf,cpf);
+				
+					//system ("cls");
+					//printf ("%d",n);
+					//printf ("\n%d", vbilhete);
+					//printf ("\n%s", vcpf);
+					//printf ("\n%s", cpf);
+					
+					if (rest == 0 && n == vbilhete){
+					
+					
+					printf ("\n\n\n***BILHETE VALIDADO COM SUCESSO***");
+			}
+					if (n  != vbilhete ) {
+					
+					
+					printf ("\n\n\n***NÚMERO DE INGRESSO INVÁLIDO***");
+					
+			}
+					if (rest != 0  ){
+					
+					
+					printf ("\n\n\n***CPF INVÁLIDO***");
+		}
+					
+					//system ("cls");
+					 break;
+			case 3:
+				
+				    printf ("    ***INGRESSO*** \n\n\n\n");
+					printf ("Valor total da compra : %.2f", valor);
+					printf ("\nNome: %s", nome);
+					printf ("\nCPF: %s", cpf);
+					printf ("\ntema 100 anos da semana de arte moderna: %.f \n Jogos Olimpicos de Paris 2024: %.f \n150 anos de Santos Dumont: %.f \nTema a definir: %.f", selecao.tipo1, selecao.tipo2, selecao.tipo3, selecao.tipo4);
+					printf ("\nNumero do ingresso : %d\n\n\n\n", n);
+					
+					break;
+						
+            default:
+                printf("Opcao invalida. Tente novamente.\n");
+        }
+    } while (escolha != 4);  // Continua o loop até que o usuário escolha a opção de sair (4)
+    
+    
+
+    return 0;
+}
+
+
+
+
+
+
+
